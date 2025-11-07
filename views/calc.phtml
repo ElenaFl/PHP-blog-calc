@@ -1,0 +1,11 @@
+<h2 style="color: #072c8be5;">Калькулятор:</h2>
+<form action="<?=BASE_URL?>?page=calc" method="post">
+    <input style="padding:5px; font-size: 18px;" type="text" name="arg1" size="5" value="<?=$arg1?>">
+    <button style="padding:5px; font-size: 18px;" type="submit" name="operator" value="+">+</button>
+    <button style="padding:5px; font-size: 18px;" type="submit" name="operator" value="-">-</button>
+    <button style="padding:5px; font-size: 18px;" type="submit" name="operator" value="*">*</button>
+    <button style="padding:5px; font-size: 18px;" type="submit" name="operator" value="/">/</button>
+    <input style="padding:5px; font-size: 18px;" type="text" name="arg2" size="5" value="<?=$arg2?>">
+    <input style="padding:5px; font-size: 18px;" type="text" readonly value="=" size="1">
+    <input style="padding:5px; font-size: 18px;" type="text" readonly size="20" value="<?=$result?>">
+</form>

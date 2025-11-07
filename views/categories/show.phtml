@@ -1,0 +1,15 @@
+<?php if (!is_null($categoryName)): ?>
+    <h2>Посты категории <?= $categoryName ?></h2>
+
+
+    <?php foreach ($posts as $post): ?>
+        <div>
+            <a href="?page=post&id=<?= htmlspecialchars($post['id']) ?>">
+                <b><?= htmlspecialchars($post['title']) ?></b>
+            </a>
+        </div>
+    <?php endforeach; ?>
+
+<?php else: ?>
+    Нет постов с такой категорией
+<?php endif; ?>

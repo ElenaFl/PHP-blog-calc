@@ -1,0 +1,51 @@
+<h2 style="color: #072c8be5;">Создание поста:</h2>
+<form  method="post">
+    <?php if (!empty($data['result'])): ?>
+        <p style="color: <?= $data['result'] === 'Пост успешно создан' ? 'green' : 'red' ?>">
+            <?= htmlspecialchars($data['result']) ?>
+        </p>
+    <?php endif; ?>
+
+    <label style="color: #072c8be5;" for="title">Заголовок:</label><br>
+    <input style="color: #072c8be5; font-size: 18px;" type="text" name="title" id="title"
+           value="<?= htmlspecialchars($_POST['title'] ?? '') ?>"
+           required><br><br>
+
+    <label style="color: #072c8be5; font-size: 18px;" for="category_id">Категория:</label><br>
+    <select style="color: #072c8be5;" name="category_id" id="category_id" required>
+        <option value="">Выбрать</option>
+        <option value="1" <?= isset($_POST['category_id']) && $_POST['category_id'] == '1' ? 'selected' : '' ?>>Политика</option>
+        <option value="2" <?= isset($_POST['category_id']) && $_POST['category_id'] == '2' ? 'selected' : '' ?>>Спорт</option>
+    </select><br><br>
+
+    <label style="color: #072c8be5; font-size: 18px;" for="text">Текст:</label><br>
+    <textarea style="color: #072c8be5;" name="text" id="text" required><?= htmlspecialchars($_POST['text'] ?? '') ?></textarea><br><br>
+
+    <button style="color: #072c8be5;" type="submit">Создать пост</button>
+</form>
+
+<h2 style="color: #072c8be5; font-size: 28px;">Посты:</h2>
+<?php if (!empty($data['posts'])): ?>
+    <?php foreach ($data['posts'] as $post): ?>
+        <div style="margin: 15px 0; padding: 10px; border: 1px solid #072d8b69;">
+            <a style="color: #072c8be5; font-size: 20px;" href="?page=post&id=<?= (int)$post['id'] ?>">
+                <b><?= htmlspecialchars($post['title']) ?></b>
+            </a>
+            <p style="color: #072c8be5; margin: 5px 0 0 0; font-size: 18px;">
+                Категория: <?php if((int)$post['category_id'] === 1)
+                    {
+                        echo "Политика";
+                    }  elseif((int)$post['category_id'] === 2)
+                        {
+                            echo "Спорт";
+                        }?>
+            </p>
+            <?php if (!empty($post['text'])): ?>
+                <p style="color: #072c8be5; font-size: 17px;"><?= htmlspecialchars($post['text']) ?></p>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Нет постов для отображения.</p>
+<?php endif; ?>
+

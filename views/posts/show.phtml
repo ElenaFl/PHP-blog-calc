@@ -1,0 +1,13 @@
+
+
+
+<h2>Посты</h2>
+
+<?php if (!is_null($post)):?>
+    <div>
+        <h3><?=htmlspecialchars($post['title'])?></h3>
+        <b><?=htmlspecialchars($post['text'])?></b>
+    </div>
+<?php else:?>
+    Нет поста
+<?php endif;?>

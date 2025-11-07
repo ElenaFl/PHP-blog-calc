@@ -1,0 +1,9 @@
+<h2>Категории</h2>
+
+<?php foreach ($categories as $category): ?>
+    <div>
+        <a href="?page=posts-by-category&id=<?= htmlspecialchars($category['id']) ?>">
+            <b><?=htmlspecialchars($category['name']) ?></b>
+        </a>
+    </div>
+<?php endforeach; ?>

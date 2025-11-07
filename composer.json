@@ -1,0 +1,12 @@
+{
+    "name": "ember/22",
+    "autoload": {
+        "files": [
+            "model/posts.php",
+            "model/categories.php",
+            "core/render.php",
+            "controllers/controller.php"
+        ]
+    },
+    "require": {}
+}

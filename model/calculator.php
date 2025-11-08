@@ -2,21 +2,22 @@
 function addition(float $arg1, float $arg2): float    {
     return $arg1 + $arg2;
 }
+
 function subtraction (float $arg1, float $arg2): float
 {
     return $arg1 - $arg2;
 }
+
 function multiply(float $arg1, float $arg2): float
 {
     return $arg1 * $arg2;
 }
+
 function division(float $arg1, float $arg2): float|string
 {
-    if ($arg2 == 0){
-        return 'На ноль делить нельзя!';
-    }
-    return $arg1 / $arg2;
+    return $arg2 == 0 ? 'На ноль делить нельзя!' : $arg1 / $arg2;
 }
+
 
 function calculate(float $arg1, float $arg2, string $operator): float|string
 {
@@ -33,4 +34,4 @@ function calculate(float $arg1, float $arg2, string $operator): float|string
             return 'Ошибка!';
     }
 
-};
+}

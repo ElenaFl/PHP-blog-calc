@@ -5,7 +5,9 @@
             "model/posts.php",
             "model/categories.php",
             "core/render.php",
-            "controllers/controller.php"
+            "controllers/controller-calc.php",
+            "controllers/controller-post.php",
+            "model/calculator.php"
         ]
     },
     "require": {}

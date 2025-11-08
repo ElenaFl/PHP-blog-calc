@@ -1,6 +1,4 @@
 <?php
-
-include_once __DIR__ . '/../model/posts.php';
 function postsControl(): array
 {
     $data = [

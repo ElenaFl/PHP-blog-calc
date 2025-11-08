@@ -1,6 +1,5 @@
 <?php
 
-include_once __DIR__ . '/../model/calculator.php';
 function calcControl(): array {
     $data = [
         'result'=> 0,

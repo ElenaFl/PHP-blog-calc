@@ -11,8 +11,6 @@ switch ($page) {
         break;
 
     case 'calc':
-        include __DIR__ . '/../controllers/controller-calc.php';
-
         $data = calcControl();
 
         echo render('calc', [
@@ -25,7 +23,9 @@ switch ($page) {
     case 'categories':
         $categories = getCategories();
 
-        include VIEWS_PATH . '/categories/index.phtml';
+        echo render('categories/index', [
+            'categories' => $categories
+        ]);
         break;
 
     case 'posts-by-category':
@@ -41,8 +41,6 @@ switch ($page) {
         break;
 
     case 'posts':
-        include __DIR__ . '/../controllers/controller-post.php';
-
         $data = postsControl();
     
         echo render('posts/index', [

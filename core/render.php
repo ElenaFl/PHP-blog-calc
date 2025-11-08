@@ -8,8 +8,7 @@ function render(string $page, array $params = []): string
     ]);
 }
 
-//$params =
-// 'name' => 'Alex'
+
 function renderTemplate(string $page, array $params = []): string
 {
     ob_start();
